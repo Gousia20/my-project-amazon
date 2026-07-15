@@ -14,6 +14,6 @@ echo "disk space after"
 }
 }
 }
-}.
+}
 
 
