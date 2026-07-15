@@ -17,7 +17,7 @@ df -h /
 }
 post {
     always {
-        sh 'rm -rf bigfile'
+        cleanWs()
     }
 }
 }
