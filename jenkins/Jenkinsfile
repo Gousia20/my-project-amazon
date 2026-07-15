@@ -18,14 +18,8 @@ sh 'mvn clean package'
 
 stage ('deploy') {
 steps {
-        sh ...
-        if docker exec tomcat ls /usr/local/tomcat/webapps/mywar.war > /dev/null 2>&1
-        then 
-        echo "war file already exixts"
-        exit 1
-        fi
-         docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/
-                 ...
+      sh 'docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/'
+              
 }
 }
 }
