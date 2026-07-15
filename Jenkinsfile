@@ -6,7 +6,8 @@ stage ('build') {
 steps {
 sh '''
 echo "creating build files"
-   dd if=/dev/zero of=bigfile bs=1G count=22
+mkdir -p bigfile
+   dd if=/dev/zero of=bigfile/testfile.img bs=1M count=500
 echo "created build files"
 '''
 }
