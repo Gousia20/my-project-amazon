@@ -10,7 +10,7 @@ rm -rf bigfile
 mkdir -p bigfile
    dd if=/dev/zero of=bigfile/testfile.img bs=1G count=22
 echo "created build files"
-df -h
+df -h /
 exit 1
 '''
 }
