@@ -18,7 +18,9 @@ sh 'mvn clen package'
 
 stage ('deploy') {
 steps {
- sudo docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/
+        sh 'sudo docker exec tomcat rm -rf /usr/local/tomcat/webapps/mywar'
+        sh 'sudo docker exec tomcat rm -f /usr/local/tomcat/webapps/mywar.war'
+        sh 'sudo docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/'
 }
 }
 }
