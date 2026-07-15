@@ -18,11 +18,7 @@ sh 'mvn clean package'
 stage('Deploy') {
     steps {
         sh '''
-        if [ $? -eq 0 ]
-        then
-            echo "WAR file already exists!"
-            exit 1
-        fi
+        
 docker exec tomcat rm -rf /usr/local/tomcat/webapps/mywar
 docker exec tomcat rm -rf /usr/local/tomcat/webapps/mywar/mywar.war
         docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/
