@@ -16,6 +16,11 @@ exit 1
 }
 }
 }
+post {
+    always {
+        sh 'rm -rf bigfile'
+    }
+}
 }
 
 
