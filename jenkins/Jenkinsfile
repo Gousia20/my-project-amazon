@@ -1,0 +1,104 @@
+pipeline {
+
+agent any 
+
+stages {
+stage ('git checkout') {
+steps {
+git 'https://github.com/Gousia20/my-project-amazon.git'
+}
+}
+
+stage ('build') {
+steps {
+
+sh 'mvn clen package'
+}
+}
+
+stage ('deploy') {
+steps {
+ sudo docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/
+}
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
