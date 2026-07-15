@@ -5,7 +5,7 @@ agent any
 stages {
 stage ('git checkout') {
 steps {
-git 'https://github.com/Gousia20/my-project-amazon.git'
+git branch: 'main' , url: 'https://github.com/Gousia20/my-project-amazon.git'
 }
 }
 
@@ -18,8 +18,6 @@ sh 'mvn clen package'
 
 stage ('deploy') {
 steps {
-        sh 'sudo docker exec tomcat rm -rf /usr/local/tomcat/webapps/mywar'
-        sh 'sudo docker exec tomcat rm -f /usr/local/tomcat/webapps/mywar.war'
         sh 'sudo docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/'
 }
 }
