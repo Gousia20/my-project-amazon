@@ -18,7 +18,7 @@ sh 'mvn clean package'
 
 stage ('deploy') {
 steps {
-        sh 'sudo docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/'
+        sh 'docker cp target/mywar.war tomcat:/usr/local/tomcat/webapps/'
 }
 }
 }
